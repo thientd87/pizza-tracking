@@ -55,7 +55,7 @@ public class PizzaEventTrigger
                     { 
                         // Update the existing order
                         pizzaOrder.Status = eventInfo.EventType;
-                        pizzaOrder.Events.Add(eventInfo.EventType);
+                        pizzaOrder.Events.Add(eventInfo.Payload);
 
                         await container.ReplaceItemAsync(pizzaOrder, pizzaOrder.id, new PartitionKey(pizzaOrder.PizzaId));
                         
@@ -68,7 +68,8 @@ public class PizzaEventTrigger
                             id = Guid.NewGuid().ToString(),
                             PizzaId = eventInfo.PizzaId,
                             Status = eventInfo.EventType,
-                            Events = new List<string> { eventInfo.EventType }
+                            Events = new List<string> { eventInfo.Payload },
+                            TimeStamp = eventInfo.Timestamp
                         };
 
                         await container.CreateItemAsync(newPizzaOrder, new PartitionKey(newPizzaOrder.PizzaId));

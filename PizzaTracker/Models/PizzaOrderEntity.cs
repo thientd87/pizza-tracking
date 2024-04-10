@@ -13,4 +13,6 @@ public class PizzaOrderEntity
     public string Status { get; set; }
 
     public List<string> Events { get; set; } = new List<string>();
+    
+    public string TimeStamp { get; set; }
 }
