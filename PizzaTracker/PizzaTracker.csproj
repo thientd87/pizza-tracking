@@ -9,6 +9,8 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.19.0"/>
         <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.CosmosDB" Version="4.4.2" />
+        <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.1.0" />
+        <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Timer" Version="4.3.0" />
         <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.15.1"/>
     </ItemGroup>
     <ItemGroup>
